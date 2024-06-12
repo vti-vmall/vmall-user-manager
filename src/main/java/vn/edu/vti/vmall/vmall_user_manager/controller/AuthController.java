@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import vn.edu.vti.vmall.api.common.response.ApiResponse;
 import vn.edu.vti.vmall.vmall_user_manager.payload.request.LoginRequest;
 import vn.edu.vti.vmall.vmall_user_manager.payload.request.RegisterAccountRequest;
-import vn.edu.vti.vmall.vmall_user_manager.payload.request.RegisterAccountResponse;
-import vn.edu.vti.vmall.vmall_user_manager.payload.response.ApiResponse;
+import vn.edu.vti.vmall.vmall_user_manager.payload.response.RegisterAccountResponse;
 import vn.edu.vti.vmall.vmall_user_manager.payload.response.LoginResponse;
 import vn.edu.vti.vmall.vmall_user_manager.service.AuthService;
 
