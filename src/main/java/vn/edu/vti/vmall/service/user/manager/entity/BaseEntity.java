@@ -1,4 +1,4 @@
-package vn.edu.vti.vmall.user.manager.entity;
+package vn.edu.vti.vmall.service.user.manager.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;

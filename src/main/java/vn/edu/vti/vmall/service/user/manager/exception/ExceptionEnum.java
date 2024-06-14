@@ -1,4 +1,4 @@
-package vn.edu.vti.vmall.user.manager.exception;
+package vn.edu.vti.vmall.service.user.manager.exception;
 
 import org.springframework.http.HttpStatus;
 import vn.edu.vti.vmall.api.common.exception.VMallExceptionInfo;

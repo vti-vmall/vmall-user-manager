@@ -1,4 +1,4 @@
-package vn.edu.vti.vmall.user.manager.controller;
+package vn.edu.vti.vmall.service.user.manager.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;

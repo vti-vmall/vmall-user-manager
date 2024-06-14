@@ -1,4 +1,4 @@
-package vn.edu.vti.vmall.user.manager;
+package vn.edu.vti.vmall.service.user.manager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package vn.edu.vti.vmall.user.manager.payload.request;
+package vn.edu.vti.vmall.service.user.manager.payload.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

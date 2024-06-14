@@ -1,15 +1,15 @@
-package vn.edu.vti.vmall.user.manager.payload.response;
-
+package vn.edu.vti.vmall.service.user.manager.payload.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Setter
-public class RegisterAccountResponse {
+public class LoginResponse {
   private String username;
+  private String token;
 }

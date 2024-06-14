@@ -1,4 +1,4 @@
-package vn.edu.vti.vmall.user.manager.service.impl;
+package vn.edu.vti.vmall.service.user.manager.service.impl;
 
 
 import java.time.ZonedDateTime;
@@ -10,14 +10,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.edu.vti.vmall.api.common.exception.VMallException;
 import vn.edu.vti.vmall.security.util.JwtUtil;
-import vn.edu.vti.vmall.user.manager.exception.ExceptionEnum;
-import vn.edu.vti.vmall.user.manager.payload.request.LoginRequest;
-import vn.edu.vti.vmall.user.manager.payload.request.RegisterAccountRequest;
-import vn.edu.vti.vmall.user.manager.payload.response.LoginResponse;
-import vn.edu.vti.vmall.user.manager.payload.response.RegisterAccountResponse;
-import vn.edu.vti.vmall.user.manager.repository.VMallUserRepository;
-import vn.edu.vti.vmall.user.manager.service.AuthService;
-import vn.edu.vti.vmall.user.manager.entity.VMallUser;
+import vn.edu.vti.vmall.service.user.manager.entity.VMallUser;
+import vn.edu.vti.vmall.service.user.manager.exception.ExceptionEnum;
+import vn.edu.vti.vmall.service.user.manager.payload.request.LoginRequest;
+import vn.edu.vti.vmall.service.user.manager.payload.request.RegisterAccountRequest;
+import vn.edu.vti.vmall.service.user.manager.payload.response.LoginResponse;
+import vn.edu.vti.vmall.service.user.manager.payload.response.RegisterAccountResponse;
+import vn.edu.vti.vmall.service.user.manager.repository.VMallUserRepository;
+import vn.edu.vti.vmall.service.user.manager.service.AuthService;
 
 @Service
 @Slf4j
