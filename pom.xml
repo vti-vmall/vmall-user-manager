@@ -10,7 +10,7 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>vn.edu.vti.vmall</groupId>
-  <artifactId>vmall_user_manager</artifactId>
+  <artifactId>vmall-user-manager</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>vmall_user_manager</name>
   <description>vmall_user_manager</description>

@@ -1,4 +1,4 @@
-package vn.edu.vti.vmall.vmall_user_manager.payload.response;
+package vn.edu.vti.vmall.user.manager.payload.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class LoginResponse {
+public class LoginRequest {
   private String username;
-  private String token;
+  private String password;
 }

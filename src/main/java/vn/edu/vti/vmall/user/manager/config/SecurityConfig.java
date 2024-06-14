@@ -1,4 +1,4 @@
-package vn.edu.vti.vmall.vmall_user_manager.config;
+package vn.edu.vti.vmall.user.manager.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
