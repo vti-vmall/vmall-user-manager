@@ -3,5 +3,6 @@ spring:
     name: vmall-user-manager
   config:
     import: ${CONFIG_SERVER_URL:optional:configserver:http://localhost:6969}
+
 server:
   port: 8081
