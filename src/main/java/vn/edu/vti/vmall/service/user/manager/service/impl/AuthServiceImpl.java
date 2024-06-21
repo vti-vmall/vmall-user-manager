@@ -4,6 +4,7 @@ package vn.edu.vti.vmall.service.user.manager.service.impl;
 import java.time.ZonedDateTime;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import vn.edu.vti.vmall.service.user.manager.entity.VMallUser;
 import vn.edu.vti.vmall.service.user.manager.exception.ExceptionEnum;
 import vn.edu.vti.vmall.service.user.manager.payload.request.LoginRequest;
 import vn.edu.vti.vmall.service.user.manager.payload.request.RegisterAccountRequest;
+import vn.edu.vti.vmall.service.user.manager.payload.request.SendEmailRequest;
 import vn.edu.vti.vmall.service.user.manager.payload.response.LoginResponse;
 import vn.edu.vti.vmall.service.user.manager.payload.response.RegisterAccountResponse;
 import vn.edu.vti.vmall.service.user.manager.repository.VMallUserRepository;
@@ -27,6 +29,7 @@ public class AuthServiceImpl implements AuthService {
   private final VMallUserRepository vMallUserRepository;
   private final PasswordEncoder passwordEncoder;
   private final JwtUtil jwtUtil;
+  private final RabbitTemplate rabbitTemplate;
 
   @Value("${spring.application.name}")
   private String serviceName;
@@ -46,6 +49,15 @@ public class AuthServiceImpl implements AuthService {
     user.setPassword(passwordEncoder.encode(request.getPassword()));
     vMallUserRepository.save(user);
     //Send email via message queue
+    SendEmailRequest sendEmailRequest = new SendEmailRequest();
+    sendEmailRequest.setTarget(request.getEmail());
+    sendEmailRequest.setContent("Welcome to VMall");
+
+    rabbitTemplate.convertAndSend(
+        "local.send.email.exchange",
+        "local.send.email.routing-key",
+        sendEmailRequest
+    );
     //End send email via message queue
     log.info("(registerAccount)Success for username: [{}] at: [{}]",
         username,

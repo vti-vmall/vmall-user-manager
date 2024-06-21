@@ -5,7 +5,6 @@ import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
-import org.springframework.amqp.core.TopicExchange;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -29,7 +28,8 @@ public class SendEmailQueueConfig {
   @Bean
   Binding bpEventDetailCmpBinding(Queue sendEmailQueue,
       DirectExchange sendEmailExchange) {
-    return BindingBuilder.bind(sendEmailQueue)
+    return BindingBuilder
+        .bind(sendEmailQueue)
         .to(sendEmailExchange)
         .with(routingKey);
   }

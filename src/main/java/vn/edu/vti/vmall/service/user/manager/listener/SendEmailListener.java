@@ -8,7 +8,7 @@ import vn.edu.vti.vmall.service.user.manager.payload.request.SendEmailRequest;
 @Component
 @Slf4j
 public class SendEmailListener {
-  @RabbitListener(queues = "local.send.email.queue")
+//  @RabbitListener(queues = "local.send.email.queue")
   public void testListener(SendEmailRequest sendEmailRequest){
     log.info("Msg: [{}]", sendEmailRequest);
   }
