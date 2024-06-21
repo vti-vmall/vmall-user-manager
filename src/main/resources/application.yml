@@ -3,6 +3,12 @@ spring:
     name: vmall-user-manager
   config:
     import: ${CONFIG_SERVER_URL:optional:configserver:http://localhost:6969}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
 
 server:
   port: 8081

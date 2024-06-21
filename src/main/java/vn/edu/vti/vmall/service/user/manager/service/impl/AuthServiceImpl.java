@@ -45,6 +45,8 @@ public class AuthServiceImpl implements AuthService {
     user.setUsername(username);
     user.setPassword(passwordEncoder.encode(request.getPassword()));
     vMallUserRepository.save(user);
+    //Send email via message queue
+    //End send email via message queue
     log.info("(registerAccount)Success for username: [{}] at: [{}]",
         username,
         ZonedDateTime.now());
