@@ -2,4 +2,7 @@ spring:
   application:
     name: vmall-user-manager
   config:
-    import: ${CONFIG_SERVER_URL:optional:configserver:http://localhost:6969}
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://localhost:6969}
