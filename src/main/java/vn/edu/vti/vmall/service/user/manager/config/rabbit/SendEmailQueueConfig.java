@@ -7,13 +7,23 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import vn.edu.vti.vmall.service.user.manager.config.rabbit.properties.QueueConfigProperties;
 
 @Configuration
 public class SendEmailQueueConfig {
-  private String routingKey = "local.send.email.routing-key";
-  private String queueName = "local.send.email.queue";
+  private final String  routingKey;
+  private final String queueName;
 
-  private String exchangeName = "local.send.email.exchange";
+  private final String exchangeName;
+
+  public SendEmailQueueConfig(
+      QueueConfigProperties queueConfigProperties
+  ){
+    var sendEmailQueueConfig = queueConfigProperties.getSendEmail();
+    this.routingKey = sendEmailQueueConfig.getRoutingKey();
+    this.queueName = sendEmailQueueConfig.getQueueName();
+    this.exchangeName = sendEmailQueueConfig.getExchange();
+  }
 
   @Bean
   DirectExchange sendEmailExchange() {

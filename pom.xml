@@ -17,6 +17,7 @@
   <properties>
     <java.version>17</java.version>
     <spring-cloud.version>2023.0.2</spring-cloud.version>
+    <vmall.common.lib.version>1.0.0</vmall.common.lib.version>
   </properties>
   <dependencies>
     <dependency>
@@ -47,7 +48,14 @@
       <artifactId>lombok</artifactId>
       <optional>true</optional>
     </dependency>
-<!--    SPRING SECURITY-->
+    <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>8.0.1.Final</version>
+    </dependency>
+
+    <!--    SPRING SECURITY-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
@@ -68,12 +76,17 @@
     <dependency>
       <groupId>vn.edu.vti.vmall</groupId>
       <artifactId>api-common</artifactId>
-      <version>1.0.0</version>
+      <version>${vmall.common.lib.version}</version>
     </dependency>
     <dependency>
       <groupId>vn.edu.vti.vmall</groupId>
       <artifactId>security-common</artifactId>
-      <version>1.0.0</version>
+      <version>${vmall.common.lib.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>vn.edu.vti.vmall</groupId>
+      <artifactId>queue-common</artifactId>
+      <version>${vmall.common.lib.version}</version>
     </dependency>
 <!--    END VMALL COMMON-->
     <dependency>

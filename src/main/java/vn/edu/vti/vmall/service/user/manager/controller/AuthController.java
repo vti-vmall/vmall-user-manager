@@ -1,5 +1,6 @@
 package vn.edu.vti.vmall.service.user.manager.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ public class AuthController {
   private final AuthService authService;
   @PostMapping(value = "/register")
   public ResponseEntity<ApiResponse<RegisterAccountResponse>> register(
-      @RequestBody RegisterAccountRequest request
+      @Valid @RequestBody RegisterAccountRequest request
   ){
     return ResponseEntity.ok(ApiResponse.success(authService.registerAccount(request)));
   }
