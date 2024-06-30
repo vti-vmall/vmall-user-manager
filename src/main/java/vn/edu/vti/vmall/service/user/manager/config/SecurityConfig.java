@@ -20,7 +20,8 @@ public class SecurityConfig {
         authorizationManagerRequestMatcherRegistry
             .requestMatchers(
                 "/api/v1/auth/**",
-                "/api/v1/internal/**"
+                "/api/v1/internal/**",
+                "/actuator/**"
             )
             .permitAll()
             .anyRequest()
